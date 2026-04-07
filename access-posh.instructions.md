@@ -6,7 +6,7 @@ description: "Use when the user mentions Access databases (.accdb/.mdb), Access-
 When working with Microsoft Access databases, use the PowerShell script at:
 
 ```
-k:\Workgrp\PERSONAL SHARE\Colozzi\Access POSH\Access-POSH.ps1
+c:\PATH\TO\Access POSH\Access-POSH.ps1
 ```
 
 Dot-source it in a PowerShell 7 terminal before calling any Access functions:
