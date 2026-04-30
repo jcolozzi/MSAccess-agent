@@ -7,7 +7,9 @@ function Export-AccessReport {
     #>
     [CmdletBinding()]
     param(
+        [ValidateNotNullOrEmpty()]
         [string]$DbPath,
+        [ValidateNotNullOrEmpty()]
         [string]$ObjectName,
         [ValidateSet('report','table','query','form')]
         [string]$ObjectType = 'report',
@@ -66,9 +68,11 @@ function Copy-AccessData {
     #>
     [CmdletBinding()]
     param(
+        [ValidateNotNullOrEmpty()]
         [string]$DbPath,
         [ValidateSet('import','export')][string]$Action,
         [string]$FilePath,
+        [ValidateNotNullOrEmpty()]
         [string]$TableName,
         [bool]$HasHeaders = $true,
         [ValidateSet('xlsx','xls','excel','csv','txt','text')]

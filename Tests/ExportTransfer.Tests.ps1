@@ -34,3 +34,21 @@ Describe 'Copy-AccessData' {
         (Get-Command Copy-AccessData).Parameters['FilePath'] | Should -Not -BeNullOrEmpty
     }
 }
+
+Describe 'Export-AccessReport — Parameter Validation' {
+    It 'throws when -ObjectName is omitted' {
+        { Export-AccessReport -DbPath 'x:\fake.accdb' } | Should -Throw '*-ObjectName is required*'
+    }
+}
+
+Describe 'Copy-AccessData — Parameter Validation' {
+    It 'throws when -Action is omitted' {
+        { Copy-AccessData -DbPath 'x:\fake.accdb' } | Should -Throw '*-Action is required*'
+    }
+    It 'throws when -FilePath is omitted' {
+        { Copy-AccessData -DbPath 'x:\fake.accdb' -Action 'import' } | Should -Throw '*-FilePath is required*'
+    }
+    It 'throws when -TableName is omitted' {
+        { Copy-AccessData -DbPath 'x:\fake.accdb' -Action 'import' -FilePath 'x:\fake.xlsx' } | Should -Throw '*-TableName is required*'
+    }
+}

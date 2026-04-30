@@ -102,7 +102,7 @@ $script:REL_ATTR = @{
 }
 
 # SQL prefixes that require confirmation
-$script:DESTRUCTIVE_PREFIXES = @('DELETE', 'DROP', 'TRUNCATE', 'ALTER')
+$script:DESTRUCTIVE_PREFIXES = @('DELETE', 'DROP', 'TRUNCATE', 'ALTER', 'UPDATE')
 
 # Binary sections in form/report exports (stripped on export, restored on import)
 $script:BINARY_SECTIONS = [System.Collections.Generic.HashSet[string]]::new(
